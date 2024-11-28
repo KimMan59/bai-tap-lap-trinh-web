@@ -18,7 +18,8 @@ public class Cart {
         for (DetailProduct x : CartProducts) {
             if (x.getProduct().getId() == product.getProduct().getId()) {
                 // Sản phẩm đã tồn tại trong giỏ hàng
-                return;
+                x.setQuantity(x.getQuantity() + product.getQuantity());
+            return;
             }
         }
         // Nếu không tồn tại, thêm sản phẩm vào giỏ hàng
@@ -31,8 +32,8 @@ public class Cart {
         for(DetailProduct x : CartProducts){
             if (x.getProduct().getId() == product.getProduct().getId()) {
                 // Cập nhật số lượng sản phẩm
-                x.setQuantity(x.getQuantity() + product.getQuantity());
-            return;
+                x.setQuantity(quantity);
+                return;
             }
         }
     }
