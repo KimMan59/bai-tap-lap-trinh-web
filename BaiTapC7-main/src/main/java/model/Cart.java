@@ -31,8 +31,8 @@ public class Cart {
         for(DetailProduct x : CartProducts){
             if (x.getProduct().getId() == product.getProduct().getId()) {
                 // Cập nhật số lượng sản phẩm
-                x.setQuantity(quantity);
-                return;
+                x.setQuantity(x.getQuantity() + product.getQuantity());
+            return;
             }
         }
     }
